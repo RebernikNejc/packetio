@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>packetio - track packages</title>
+        <link rel="stylesheet" href="./css/bootstrap.css">
+    </head>
+    <body>
+        <div class="container">
+            <!-- Controls -->
+            <div class="row mt-3">
+                <div class="col">
+                    <button type="button" class="btn btn-primary w-100" data-toggle="modal" data-target="#new" onclick="newdialog()">Dodaj paket</button>
+                </div>
+            </div>
+            <!-- Packages -->
+            <div id="packages"></div>
+            <!-- Modal dialogs -->
+            <div class="modal" tabindex="-1" id="new">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Dodaj paket</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="name">Ime</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Ime">
+                                </div>
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="fromDate">Dostava od</label>
+                                            <input type="date" class="form-control" id="fromDate" onchange="selectedFrom()">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="toDate">Dostava do</label>
+                                            <input type="date" class="form-control" id="toDate">
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Prekliči</button>
+                            <button type="button" class="btn btn-success" onclick="addPackage()">Dodaj</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap scripts -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        <script src="./js/index.js"></script>
+    </body>
+</html>
